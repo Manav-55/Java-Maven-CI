@@ -1,0 +1,73 @@
+### docker build demo-app:local  (2026-11-13T08:17:06Z)  Spring Boot 4.1.2
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 561B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/maven:3.9-eclipse-temurin-17
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/eclipse-temurin:17-jre-alpine
+#3 DONE 1.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 65B done
+#4 DONE 0.0s
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9-eclipse-temurin-17@sha256:1a352420f7aba21f5ad08df31bab55f74c013fb491f1ae8ab1dd7ff9ed698584
+#5 resolve docker.io/library/maven:3.9-eclipse-temurin-17@sha256:1a352420f7aba21f5ad08df31bab55f74c013fb491f1ae8ab1dd7ff9ed698584 0.0s done
+#5 DONE 0.0s
+
+#6 [build 2/6] WORKDIR /app
+#6 CACHED
+
+#7 [stage-1 1/4] FROM docker.io/library/eclipse-temurin:17-jre-alpine@sha256:e2ba4e947bd5e236a9866fbdda03e4936036cb9e9d16ea0d84d103d6634a5c21
+#7 resolve docker.io/library/eclipse-temurin:17-jre-alpine@sha256:e2ba4e947bd5e236a9866fbdda03e4936036cb9e9d16ea0d84d103d6634a5c21 0.0s done
+#7 CACHED
+
+#8 [stage-1 2/4] RUN addgroup -S app && adduser -S app -G app
+#8 ...
+
+#9 [internal] load build context
+#9 transferring context: 3.52kB done
+#9 DONE 0.0s
+
+#10 [build 3/6] COPY pom.xml .
+#10 DONE 0.0s
+
+#11 [build 4/6] RUN mvn -B -q dependency:go-offline
+#11 ...
+
+#8 [stage-1 2/4] RUN addgroup -S app && adduser -S app -G app
+#8 DONE 0.5s
+
+#12 [stage-1 3/4] WORKDIR /app
+#12 DONE 0.0s
+
+#11 [build 4/6] RUN mvn -B -q dependency:go-offline
+#11 DONE 60.0s
+
+#13 [build 5/6] COPY src ./src
+#13 DONE 0.1s
+
+#14 [build 6/6] RUN mvn -B -q package -DskipTests
+#14 DONE 4.6s
+
+#15 [stage-1 4/4] COPY --from=build /app/target/demo-app-*.jar app.jar
+#15 DONE 0.1s
+
+#16 exporting to image
+#16 exporting layers
+#16 exporting layers 0.7s done
+#16 exporting manifest sha256:6e2f84727f3e9f78d3d92dbb6ea1592e0da7843838e2f77fd214ab6a69363273 0.0s done
+#16 exporting config sha256:d888d2a5f5e517c352b28b0f34adfd90d97ecfd55aad0018434c252ad301e066 0.0s done
+#16 exporting attestation manifest sha256:41853076d37386a26aa55c85b129fd35623d97ff7365f501c982dce129302f3a 0.0s done
+#16 exporting manifest list sha256:409cca45e514ce25b70add112a4310bde9d5b275aa7312779071b2644afd31c3 0.0s done
+#16 naming to docker.io/library/demo-app:local done
+#16 unpacking to docker.io/library/demo-app:local
+#16 unpacking to docker.io/library/demo-app:local 0.1s done
+#16 DONE 1.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/sof2kx7v1pr931ar3damp6gjv
+BUILD_EXIT=0

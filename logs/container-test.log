@@ -1,0 +1,6 @@
+### container smoke test  (2026-11-13T08:18:31Z)  demo-app:local, Spring Boot 4.1.2
+GET / -> HTTP 200  {"message":"Hello from the demo app","version":"1.0.0"}
+GET /actuator/health -> HTTP 200  {"groups":["liveness","readiness"],"status":"UP"}
+GET /actuator/health/liveness -> HTTP 200  {"status":"UP"}
+GET /actuator/health/readiness -> HTTP 200  {"status":"UP"}
+container user: uid=100(app) gid=101(app) groups=101(app)
